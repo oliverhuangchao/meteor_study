@@ -1,0 +1,35 @@
+<head>
+    <title>resolutions show page</title>
+</head>
+<body>
+    <div class = "container">
+        <header>
+            <h1> monthly resoutions</h1>
+            <label class="hide-finished">
+                <input type="checkbox"  checked="{{hideFinished}}">
+                high finished resolutions
+            </label>
+            <form class="new-resolution">
+                <input type = "text" name="title" placeholder="a new resolution">
+                <input type = "submit" value="submit it">
+            </form>
+        </header>
+    
+
+        <ul>
+            {{ #each resolutions }}
+                {{ > resolution }}
+            {{ /each }}
+        </ul>
+    </div>
+</body>
+
+<template name="resolution">
+    <li>
+        <input type="checkbox" checked="{{checked}}" class="toggle-checked"> 
+        {{title}}
+        <button class="delete">Remove</button>
+    </li>
+</template>
+
+
